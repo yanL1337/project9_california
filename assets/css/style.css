@@ -15,11 +15,11 @@
 html {
   font-size: 62.5%;
   font-family: Inter;
+  overflow-x: hidden;
 }
 
 body {
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .black-bg, footer, .golden-bear,
@@ -29,7 +29,7 @@ body {
   font-family: Work;
 }
 
-.white-bg, .rose-bear {
+.white-bg, footer .rolling, .rose-bear {
   background-color: white;
   color: black;
   font-family: Work;
@@ -43,6 +43,10 @@ body {
   padding: 15px 30px;
   font-size: 2rem;
   transition: 0.5s ease-in-out;
+}
+.button-style:hover, footer article a:hover, header aside a:hover {
+  background-color: #fff;
+  color: black;
 }
 
 .text-wrapper {
@@ -79,11 +83,6 @@ header aside {
   justify-content: space-between;
   margin: 0 5vw;
 }
-header aside a:hover {
-  background-color: #fff;
-  color: black;
-}
-
 .story article h1 {
   font-size: 10rem;
   font-family: Inter;
@@ -162,10 +161,12 @@ header aside a:hover {
 .action img:nth-of-type(7) {
   bottom: -5vh;
   right: 20vw;
+  z-index: 5;
 }
 
 .golden-bear,
 .rose-bear {
+  position: relative;
   height: 180vh;
   margin-bottom: 30vh;
 }
@@ -257,6 +258,166 @@ header aside a:hover {
   left: -5vw;
 }
 
+footer {
+  overflow: hidden;
+}
+footer article {
+  margin-bottom: 20vh;
+}
+footer article p {
+  font-size: 1.4rem;
+  margin-bottom: 5vh;
+}
+footer article h2 {
+  font-family: Inter;
+  font-size: 2.4rem;
+  width: 40vw;
+  line-height: 50px;
+  margin-bottom: 5vh;
+}
+footer article a {
+  margin-bottom: 5vh;
+}
+footer .rolling {
+  font-size: 10rem;
+  rotate: 45deg;
+  display: flex;
+  font-family: Work;
+  width: 200vw;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: 0.5s ease;
+  animation: rolling infinite 20s;
+}
+footer .rolling span {
+  color: white;
+  -webkit-text-stroke: 2px black;
+}
+footer section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 5vh;
+}
+footer section p {
+  font-size: 1.4rem;
+}
+footer section .socials img {
+  width: 2vw;
+  margin-bottom: 2vh;
+}
+footer section .socials p {
+  margin-bottom: 2vh;
+}
+footer section .partners img {
+  width: 10vw;
+}
+
+@media only screen and (min-width: 48em) {
+  html {
+    font-size: 30.5%;
+  }
+  .text-wrapper {
+    padding: 6vh 5vw 0 5vw;
+  }
+  .action p:nth-of-type(1) {
+    margin-bottom: 30vh;
+  }
+  .golden-bear {
+    height: 100%;
+    margin-bottom: 10vh;
+  }
+  .golden-bear article {
+    margin-bottom: 50vh;
+  }
+  .golden-bear .pictures img:nth-of-type(1) {
+    top: -30vh;
+  }
+  .golden-bear .pictures img:nth-of-type(2) {
+    bottom: -5vh;
+  }
+  .golden-bear .pictures img:nth-of-type(3) {
+    bottom: -12vh;
+  }
+  .rose-bear {
+    height: 100%;
+    margin-bottom: 10vh;
+  }
+  .rose-bear article {
+    margin-bottom: 50vh;
+  }
+  .rose-bear .pictures img:nth-of-type(1) {
+    top: -35vh;
+  }
+  .rose-bear .pictures img:nth-of-type(2) {
+    bottom: 0;
+    left: 10vw;
+  }
+  footer .rolling {
+    width: 326vw;
+    rotate: 46deg;
+  }
+}
+@media only screen and (max-width: 40rem) {
+  html {
+    font-size: 20.5%;
+  }
+  .action {
+    padding: 0;
+  }
+  .action p:nth-of-type(1) {
+    margin-bottom: 20vh;
+  }
+  .action img:nth-of-type(1) {
+    top: -5vh;
+  }
+  .action img:nth-of-type(2) {
+    top: 10vh;
+  }
+  .action img:nth-of-type(3) {
+    top: 25vh;
+  }
+  .action img:nth-of-type(4) {
+    top: 28vh;
+  }
+  .action img:nth-of-type(5) {
+    bottom: 15vh;
+  }
+  .action img:nth-of-type(6) {
+    bottom: 10vh;
+  }
+  .action,
+  .golden-bear,
+  .rose-bear {
+    height: 80vh;
+  }
+  .golden-bear,
+  .rose-bear {
+    margin-bottom: 10vh;
+  }
+  .golden-bear .pictures img:nth-of-type(1) {
+    top: -60vh;
+  }
+  .golden-bear .pictures img:nth-of-type(2) {
+    bottom: 30vh;
+  }
+  .golden-bear .pictures img:nth-of-type(3) {
+    bottom: 25vh;
+    right: -20vw;
+  }
+  .rose-bear .pictures img:nth-of-type(1) {
+    top: -65vh;
+  }
+  .rose-bear .pictures img:nth-of-type(2) {
+    bottom: 35vh;
+  }
+  footer article h2 {
+    line-height: normal;
+  }
+  footer .rolling {
+    width: 355vw;
+  }
+}
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -265,33 +426,16 @@ header aside a:hover {
     transform: rotate(360deg);
   }
 }
-footer article {
-  margin-bottom: 20vh;
-}
-footer article p {
-  margin-bottom: 5vh;
-}
-footer article h2 {
-  font-family: Inter;
-  font-size: 2.4rem;
-  width: 30vw;
-  line-height: 50px;
-  margin-bottom: 5vh;
-}
-footer article a {
-  margin-bottom: 20vh;
-}
-footer section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 10vh;
-}
-footer section .socials img {
-  width: 3vw;
-}
-footer section .partners img {
-  width: 10vw;
+@keyframes rolling {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(33vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
