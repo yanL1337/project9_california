@@ -280,7 +280,7 @@ footer article a {
 }
 footer .rolling {
   font-size: 10rem;
-  rotate: 45deg;
+  rotate: 48deg;
   display: flex;
   font-family: Work;
   width: 200vw;
@@ -313,7 +313,7 @@ footer section .partners img {
   width: 10vw;
 }
 
-@media only screen and (min-width: 48em) {
+@media only screen and (max-width: 48em) {
   html {
     font-size: 30.5%;
   }
@@ -379,6 +379,7 @@ footer section .partners img {
   }
   .action img:nth-of-type(4) {
     top: 28vh;
+    left: 5vw;
   }
   .action img:nth-of-type(5) {
     bottom: 15vh;
@@ -396,20 +397,20 @@ footer section .partners img {
     margin-bottom: 10vh;
   }
   .golden-bear .pictures img:nth-of-type(1) {
-    top: -60vh;
+    top: -10vh;
   }
   .golden-bear .pictures img:nth-of-type(2) {
-    bottom: 30vh;
+    bottom: -15vh;
   }
   .golden-bear .pictures img:nth-of-type(3) {
-    bottom: 25vh;
+    bottom: -20vh;
     right: -20vw;
   }
   .rose-bear .pictures img:nth-of-type(1) {
-    top: -65vh;
+    top: -20vh;
   }
   .rose-bear .pictures img:nth-of-type(2) {
-    bottom: 35vh;
+    bottom: -5vh;
   }
   footer article h2 {
     line-height: normal;
@@ -431,7 +432,7 @@ footer section .partners img {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(33vw);
+    transform: translateX(25vw);
   }
   100% {
     transform: translateX(0);
